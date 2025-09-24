@@ -1,0 +1,22 @@
+Archivos generados por Eclipse
+*.class
+
+bin/
+Archivos temporales y de construcción
+*.log
+*.tmp
+*.bak
+
+Archivos de salida (si generas algún ejecutable)
+/build/
+/target/
+/dist/
+
+Archivos del sistema (como .DS_Store en macOS)
+.DS_Store
+Thumbs.db
+
+Archivos de dependencias (si usas Maven/Gradle)
+*.jar
+*.war
+*.ear
