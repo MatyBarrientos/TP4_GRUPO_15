@@ -55,7 +55,7 @@
 	    <input type="submit" name="btnAceptar">
 
 		
-		<!--//implementacion del agregar Seguro Cartel-- puedo ponerlo? o el post me lo borra>
+		<!--//implementacion del agregar Seguro Cartel-- puedo ponerlo? o el post me lo borra-->
 
 	</form>
 
