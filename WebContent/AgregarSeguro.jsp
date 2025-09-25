@@ -25,19 +25,21 @@
 		<%
 		
 		int proxID = 0;
-		if(request.getAttribute("proximoID")!=null){			
-			proxID=(int) request.getAttribute("proximoID");
+		if (request.getAttribute("proximoID") != null) {
+			proxID = (int) request.getAttribute("proximoID");
 		}
-		
 		%>
+		
 		<%
+		
 		ArrayList<String> listaTipoSeguros = null;
-		if(request.getAttribute("listaTipoSeguro")!=null)
-			listaTipoSeguros= (ArrayList<String>) request.getAttribute("listaTipoSeguro");
+		if (request.getAttribute("listaTipoSeguro") != null)
+			listaTipoSeguros = (ArrayList<String>) request.getAttribute("listaTipoSeguro");
 		%>
 
-		    Id Seguro : <label><%=proxID%></label> <br> Decripción: <input type="text" name="txtDescripcionSeguro"><br> 
-			Tipo de seguro: <select name="TipoDeSeguro">
+		Id Seguro : <b><i><label><%=proxID%></label></i></b> <br> 
+		Decripción: <input type="text" name="txtDescripcionSeguro"><br>
+		 Tipo de seguro: <select name="TipoDeSeguro">
 			<%
 			int indice = 1;
 			for (String descripcion : listaTipoSeguros) {
@@ -50,12 +52,24 @@
 			}
 			%>
 		</select><br> 
-		Costo contratación: <input type="text"	name="txtCostoContratacion"><br>
-		Costo Máximo Asegurado <input type="text" name="txtCostoMaximoAsegurado"><br>
-	    <input type="submit" name="btnAceptar">
+		Costo contratación: <input type="text" name="txtCostoContratacion" ><br>
+		 Costo Máximo Asegurado <input type="text" name="txtCostoMaximoAsegurado" ><br>
+		  <input type="submit" name="btnAceptar">
 
-		
+
 		<!--//implementacion del agregar Seguro Cartel-- puedo ponerlo? o el post me lo borra-->
+		
+		<%
+				int fila = 0;
+		if (request.getAttribute("fila") != null) {
+			fila = (int) request.getAttribute("fila");
+		}
+		
+		
+		if(fila==1){%>
+		<br><br><br><label>Usuario Agregado con Exito</label>
+		<% }%>
+		
 
 	</form>
 

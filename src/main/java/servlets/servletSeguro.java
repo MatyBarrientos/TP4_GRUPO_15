@@ -1,5 +1,7 @@
 package servlets;
 
+
+import java.math.BigDecimal;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -14,7 +16,6 @@ import org.apache.catalina.connector.Request;
 
 import dominio.DaoSeguro;
 import dominio.Seguro;
-import dominio.Usuario;
 
 /**
  * Servlet implementation class servletSeguro
@@ -34,7 +35,6 @@ public class servletSeguro extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		// los dejo aca arriba, me van a ser de ayuda.
 
-		Seguro seguro = new Seguro();
 		DaoSeguro daoSeguro = new DaoSeguro();
 		
 		if(request.getParameter("Param") !=null) {
@@ -79,11 +79,15 @@ public class servletSeguro extends HttpServlet {
 			
 			int filas = 0;
 			
-		    String costoContrStr = request.getParameter("txtCostoContratacion");
-		    String costoMaxStr   = request.getParameter("txtCostoMaximoAsegurado");
+			String costoContrStr = request.getParameter("txtCostoContratacion");
+			String costoMaxStr   = request.getParameter("txtCostoMaximoAsegurado");
 
-		    float costoContr = Float.parseFloat(costoContrStr.replace(",", ".").trim());
-		    float costoMax   = Float.parseFloat(costoMaxStr.replace(",", ".").trim());
+			// Quita separadores de miles "." y cambia coma decimal por punto
+			String normContr = costoContrStr.replace(".", "").replace(",", ".").trim();
+			String normMax   = costoMaxStr.replace(".", "").replace(",", ".").trim();
+
+			BigDecimal costoContr = new BigDecimal(normContr);
+			BigDecimal costoMax   = new BigDecimal(normMax);
 		    
 			seguro.setIdSeguro(daoSeguro.obtenerUltimoIdSeguro() + 1);
 			seguro.setIdTipo(Integer.parseInt(request.getParameter("TipoDeSeguro")));

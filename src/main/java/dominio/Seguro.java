@@ -1,5 +1,6 @@
 package dominio;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Seguro {
@@ -8,13 +9,13 @@ public class Seguro {
 private int idSeguro;
 private String descripcion;
 private int idTipo;
-private float costoContratacion;
-private float costoAsegurado;
+private BigDecimal costoContratacion;
+private BigDecimal costoAsegurado;
 
 
 
 
-public Seguro(int idSeguro, String descripcion, int idTipo, float costoContratacion, float costoAsegurado) {
+public Seguro(int idSeguro, String descripcion, int idTipo, BigDecimal costoContratacion, BigDecimal costoAsegurado) {
 	super();
 	this.idSeguro = idSeguro;
 	this.descripcion = descripcion;
@@ -30,34 +31,55 @@ public Seguro() {
 }
 
 
+
+
+
 public int getIdSeguro() {
 	return idSeguro;
 }
+
+
 public void setIdSeguro(int idSeguro) {
 	this.idSeguro = idSeguro;
 }
+
+
 public String getDescripcion() {
 	return descripcion;
 }
+
+
 public void setDescripcion(String descripcion) {
 	this.descripcion = descripcion;
 }
+
+
 public int getIdTipo() {
 	return idTipo;
 }
+
+
 public void setIdTipo(int idTipo) {
 	this.idTipo = idTipo;
 }
-public float getCostoContratacion() {
+
+
+public BigDecimal getCostoContratacion() {
 	return costoContratacion;
 }
-public void setCostoContratacion(float costoContratacion) {
+
+
+public void setCostoContratacion(BigDecimal costoContratacion) {
 	this.costoContratacion = costoContratacion;
 }
-public float getCostoAsegurado() {
+
+
+public BigDecimal getCostoAsegurado() {
 	return costoAsegurado;
 }
-public void setCostoAsegurado(float costoAsegurado) {
+
+
+public void setCostoAsegurado(BigDecimal costoAsegurado) {
 	this.costoAsegurado = costoAsegurado;
 }
 
@@ -67,7 +89,7 @@ public int hashCode() {
 	return Objects.hash(costoAsegurado, costoContratacion, descripcion, idSeguro, idTipo);
 }
 
-
+/*
 @Override
 public boolean equals(Object obj) {
 	if (this == obj)
@@ -82,7 +104,7 @@ public boolean equals(Object obj) {
 			&& Objects.equals(descripcion, other.descripcion) && idSeguro == other.idSeguro && idTipo == other.idTipo;
 }
 
-
+*/
 @Override
 public String toString() {
 	return "Seguro [idSeguro=" + idSeguro + ", descripçion=" + descripcion + ", idTipo=" + idTipo

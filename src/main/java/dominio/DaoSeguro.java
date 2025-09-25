@@ -1,5 +1,6 @@
 package dominio;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -31,8 +32,8 @@ public class DaoSeguro {
 					"Insert into seguros (descripcion,idTipo,costoContratacion,costoAsegurado) values (?,?,?,?)");
 			consulta.setString(1, seguro.getDescripcion());
 			consulta.setInt(2, seguro.getIdTipo());
-			consulta.setFloat(3, seguro.getCostoContratacion());
-			consulta.setFloat(4, seguro.getCostoAsegurado());
+			consulta.setBigDecimal(3, seguro.getCostoContratacion());
+			consulta.setBigDecimal(4, seguro.getCostoAsegurado());
 			filas = consulta.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -64,8 +65,8 @@ public class DaoSeguro {
 				seguroRs.setIdSeguro(rs.getInt("idSeguro"));
 				seguroRs.setDescripcion(rs.getString("descripcion"));
 				seguroRs.setIdTipo(rs.getInt("idTipo"));
-				seguroRs.setCostoContratacion(rs.getFloat("costoContratacion"));
-				seguroRs.setCostoAsegurado(rs.getFloat("costoAsegurado"));
+				seguroRs.setCostoContratacion(rs.getBigDecimal("costoContratacion"));
+				seguroRs.setCostoAsegurado(rs.getBigDecimal("costoAsegurado"));
 				lista.add(seguroRs);
 			}
 			conn.close();
@@ -133,8 +134,8 @@ public class DaoSeguro {
 				seguroRs.setIdSeguro(rs.getInt("idSeguro"));
 				seguroRs.setDescripcion(rs.getString("descripcion"));
 				seguroRs.setIdTipo(rs.getInt("idTipo"));
-				seguroRs.setCostoContratacion(rs.getFloat("costoContratacion"));
-				seguroRs.setCostoAsegurado(rs.getFloat("costoAsegurado"));
+				seguroRs.setCostoContratacion(rs.getBigDecimal("costoContratacion"));
+				seguroRs.setCostoAsegurado(rs.getBigDecimal("costoAsegurado"));
 				lista.add(seguroRs);
 			}
 			conn.close();
