@@ -1,4 +1,3 @@
-<%@ page import="dominio.Usuario"%>
 <%@ page import="dominio.Seguro"%>
 <%@ page import="dominio.DaoSeguro"%>
 <%@ page import="java.util.ArrayList"%>
