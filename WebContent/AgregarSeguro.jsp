@@ -12,9 +12,7 @@
 <body>
 
 
-	<a href="Inicio.jsp"> Inicio </a>
-	<a href="servletSeguro?Param=1"> Agregar Seguros</a>
-	<a href="ListarSeguros.jsp"> Listar seguros</a>
+	<a href="Inicio.jsp">Inicio</a>   <a href="servletSeguro?Param=1">Agregar Seguros</a>   <a href="ListarSeguros.jsp">Listar seguros</a>
 	<br>
 	<br>
 

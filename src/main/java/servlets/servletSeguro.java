@@ -36,14 +36,13 @@ public class servletSeguro extends HttpServlet {
 		// los dejo aca arriba, me van a ser de ayuda.
 
 		DaoSeguro daoSeguro = new DaoSeguro();
-		
 		if(request.getParameter("Param") !=null) {
 			
 			
 			// 1ero devuelvo el ultimo Id
 			int proximoID = daoSeguro.obtenerUltimoIdSeguro() + 1;
 			request.setAttribute("proximoID", proximoID);
-			
+			//2do vamos con los tipos de seguros
 			ArrayList<String> listaTipoSeguro = daoSeguro.obtenerTipoSeguro();
 			request.setAttribute("listaTipoSeguro", listaTipoSeguro);
 			
@@ -64,6 +63,8 @@ public class servletSeguro extends HttpServlet {
 		DaoSeguro daoSeguro = new DaoSeguro();
 		
 		
+		
+		//es el filtro del listarSeguros.jsp
 		if(request.getParameter("btnFiltrar") != null) {
 			int ID=Integer.parseInt(request.getParameter("TipoDeSeguro"));
 			ArrayList<Seguro> listaSegurosID = daoSeguro.obtenerSegurosID(ID);
@@ -98,14 +99,14 @@ public class servletSeguro extends HttpServlet {
 			filas = daoSeguro.agregarSeguro(seguro);
 			
 			//los repetí acá para cuando agrego un seguro no me tire error.
-			//esto se hace en el doGet
+			//esto se hace en el doGet en realidad
 			int proximoID = daoSeguro.obtenerUltimoIdSeguro() + 1;
 			request.setAttribute("proximoID", proximoID);
 			
 			ArrayList<String> listaTipoSeguro = daoSeguro.obtenerTipoSeguro();
 			request.setAttribute("listaTipoSeguro", listaTipoSeguro);
 			/////////////////////////////////////////////////////////////
-
+			//para la banderita
 			request.setAttribute("fila", filas);
 			RequestDispatcher rd = request.getRequestDispatcher("/AgregarSeguro.jsp");
 			rd.forward(request, response);
