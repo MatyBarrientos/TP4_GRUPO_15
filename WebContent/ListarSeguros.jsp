@@ -17,7 +17,7 @@
 <form action="servletSeguro" method="post">
 	<br>
 	<br>
-	<b>"Tipo de seguros en la base de datos"</b>>
+	<b>"Tipo de seguros en la base de datos"</b>
 	<br>
 	<br>
 

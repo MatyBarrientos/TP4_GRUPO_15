@@ -57,17 +57,16 @@
 		  <input type="submit" name="btnAceptar">
 
 
-		<!--//implementacion del agregar Seguro Cartel-- puedo ponerlo? o el post me lo borra-->
+		<!--Marcos te agregué el label PD: extraño C# para estas cositas ajajaj-->
 		
 		<%
 				int fila = 0;
-		if (request.getAttribute("fila") != null) {
+		if (request.getAttribute("fila") != null) 
 			fila = (int) request.getAttribute("fila");
-		}
 		
 		
 		if(fila==1){%>
-		<br><br><br><label>Usuario Agregado con Exito</label>
+		<br><br><br><label>Seguro agregado con Exito</label>
 		<% }%>
 		
 

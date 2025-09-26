@@ -82,7 +82,7 @@ public class servletSeguro extends HttpServlet {
 			String costoContrStr = request.getParameter("txtCostoContratacion");
 			String costoMaxStr   = request.getParameter("txtCostoMaximoAsegurado");
 
-			// Quita separadores de miles "." y cambia coma decimal por punto
+			// Quitamos separadores de miles "." y cambia coma decimal por punto y un trim() por las dudas
 			String normContr = costoContrStr.replace(".", "").replace(",", ".").trim();
 			String normMax   = costoMaxStr.replace(".", "").replace(",", ".").trim();
 
